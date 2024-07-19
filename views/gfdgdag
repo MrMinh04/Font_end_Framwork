@@ -1,0 +1,36 @@
+angular.module('myApp').controller('CartController', function($scope, $sessionStorage) {
+    // Kiểm tra nếu đã có giỏ hàng trong session storage
+    $scope.cart = $sessionStorage.cart || [];
+
+    // Hàm thêm sản phẩm vào giỏ hàng
+    $scope.addToCart = function(product) {
+        $scope.cart.push(product);
+        // Lưu giỏ hàng vào session storage
+        $sessionStorage.cart = $scope.cart;
+    };
+
+    // Hàm xóa sản phẩm khỏi giỏ hàng
+    $scope.removeFromCart = function(index) {
+        $scope.cart.splice(index, 1);
+        // Lưu giỏ hàng vào session storage
+        $sessionStorage.cart = $scope.cart;
+    };
+
+    // Hàm tính tổng số lượng sản phẩm trong giỏ hàng
+    $scope.getTotalQuantity = function() {
+        var total = 0;
+        angular.forEach($scope.cart, function(item) {
+            total += item.quantity;
+        });
+        return total;
+    };
+
+    // Hàm tính tổng giá trị của giỏ hàng
+    $scope.getTotalPrice = function() {
+        var total = 0;
+        angular.forEach($scope.cart, function(item) {
+            total += item.price * item.quantity;
+        });
+        return total;
+    };
+});

@@ -1,0 +1,215 @@
+{
+  "category": [
+    {
+      "id": "DM01",
+      "ten": "Men's Product"
+    },
+    {
+      "id": "DM02",
+      "ten": "Women's Product"
+    },
+    {
+      "id": "DM03",
+      "ten": "Kid's Product"
+    },
+    {
+      "id": "DM04",
+      "ten": "Sale's Product"
+    }
+  ],
+  "product": [
+    {
+      "id": "SP01",
+      "ten": "Air Force 1",
+      "anh": "Air Force 1.webp",
+      "anh2": "Air Force 1_2.webp",
+      "anh3": "Air Force 1_3.webp",
+      "anh4": "Air Force 1_4.webp",
+      "gia": 33000000,
+      "tenDanhMuc": "Men's product",
+      "trangThai": "STOCKING",
+      "moTa": "The radiance lives on in the Nike Air Force , the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine."
+    },
+    {
+      "id": "SP02",
+      "ten": "Air Jordan 1 Low",
+      "anh": "Air Jordan 1 Low.webp",
+      "gia": 36000000,
+      "tenDanhMuc": "Men's product",
+      "trangThai": "STOCKING",
+      "moTa": "The radiance lives on in the Nike Air Force , the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
+      "anh2": "Air Jordan 1 Low_2.webp",
+      "anh3": "Air Jordan 1 Low_3.webp",
+      "anh4": "Air Jordan 1 Low_4.webp"
+    },
+    {
+      "id": "SP03",
+      "ten": "Nike Air Flight Lite Mid",
+      "anh": "Nike Air Flight Lite Mid.webp",
+      "gia": 35000000,
+      "tenDanhMuc": "Men's product",
+      "trangThai": "STOCKING",
+      "moTa": "The radiance lives on in the Nike Air Force , the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
+      "anh2": "Nike Air Flight Lite Mid.webp",
+      "anh3": "Nike Air Flight Lite Mid.webp",
+      "anh4": "Nike Air Flight Lite Mid.webp"
+    },
+    {
+      "id": "SP04",
+      "ten": "Nike Air Huarache Runner",
+      "anh": "Nike Air Huarache Runner.webp",
+      "gia": 38000000,
+      "tenDanhMuc": "Men's product",
+      "trangThai": "STOCKING",
+      "moTa": "The radiance lives on in the Nike Air Force , the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine."
+    },
+    {
+      "id": "SP05",
+      "ten": "Nike Go FlyEase",
+      "anh": "Nike Go FlyEase.webp",
+      "gia": 36000000,
+      "tenDanhMuc": "Women's product",
+      "trangThai": "STOCKING",
+      "moTa": "The radiance lives on in the Nike Air Force , the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine."
+    },
+    {
+      "id": "SP06",
+      "ten": "Nike Pegasus 40",
+      "anh": "Nike Pegasus 40 B.webp",
+      "gia": 43000000,
+      "tenDanhMuc": "Women's product",
+      "trangThai": "OUT OF STOCK",
+      "moTa": "The radiance lives on in the Nike Air Force , the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine."
+    },
+    {
+      "id": "SP07",
+      "ten": "Jordan Max Aura 5",
+      "anh": "Jordan Max Aura 5.webp",
+      "anh2": "Jordan Max Aura 5.webp",
+      "anh3": "Jordan Max Aura 5.webp",
+      "anh4": "Jordan Max Aura 5.webp",
+      "gia": 33000500,
+      "tenDanhMuc": "Women's product",
+      "trangThai": "STOCKING",
+      "moTa": "The radiance lives on in the Nike Air Force , the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine."
+    },
+    {
+      "id": "SP08",
+      "ten": "Jordan Nu Retro 1 Low",
+      "anh": "Jordan Nu Retro 1 Low.jpg",
+      "anh2": "Jordan Nu Retro 1 Low.jpg",
+      "anh3": "Jordan Nu Retro 1 Low.jpg",
+      "anh4": "Jordan Nu Retro 1 Low.jpg",
+      "gia": 33000500,
+      "tenDanhMuc": "Women's product",
+      "trangThai": "STOCKING",
+      "moTa": "The radiance lives on in the Nike Air Force , the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine."
+    }
+  ],
+  "oder": [
+    {
+      "id": "OD01",
+      "tenKhach": "Minh đẹp trai",
+      "pttt": "thanh toán khi giao hàng",
+      "trangThai": "Cancel",
+      "products": [
+        {
+          "product_id": "SP01",
+          "quantity": 1
+        },
+        {
+          "product_id": "SP02",
+          "quantity": 2
+        }
+      ],
+      "diaChi": "BG"
+    },
+    {
+      "id": "2433",
+      "tenKhach": "Nguyễn Văn Minh",
+      "pttt": "Payment on delivery",
+      "trangThai": "Delivereing",
+      "products": "",
+      "diaChi": "Bắc Giang"
+    },
+    {
+      "id": "agasga",
+      "tenKhach": "Nguyễn Văn Minh",
+      "pttt": "Online payment",
+      "trangThai": "Delivereing",
+      "products": [
+        {
+          "product_id": "",
+          "product_name": "",
+          "product_price": "",
+          "quantity": "",
+          "anh": "",
+          "size": "",
+          "color": ""
+        }
+      ],
+      "diaChi": "agas"
+    },
+    {
+      "id": "234",
+      "tenKhach": "Nguyễn Văn Minh",
+      "pttt": "Payment on delivery",
+      "trangThai": "Delivereing",
+      "products": "",
+      "diaChi": "BG"
+    }
+  ],
+  "cart": [
+    {
+      "id": "mrminh04",
+      "products": [
+        {
+          "product_id": "SP04",
+          "product_name": "Nike Air Huarache Runner",
+          "product_price": 38000000,
+          "quantity": 1,
+          "anh": "Nike Air Huarache Runner.webp",
+          "size": "36",
+          "color": "White"
+        }
+      ]
+    }
+  ],
+  "size": [
+    {
+      "value": 36,
+      "id": "933e"
+    },
+    {
+      "value": 37,
+      "id": "6123"
+    },
+    {
+      "value": 38,
+      "id": "2990"
+    }
+  ],
+  "account": [
+    {
+      "id": "mrminh04",
+      "tel": "0395110845",
+      "email": "nguyenminhxp2004@gmail.com",
+      "address": "Bắc Giang",
+      "pass": "123"
+    },
+    {
+      "id": "linhNgu",
+      "tel": "0395110846",
+      "email": "minhph37966@fpt.edu",
+      "address": "Bắc Giang",
+      "pass": "123"
+    },
+    {
+      "id": "admin2",
+      "tel": "65623563623",
+      "email": "sdfhs@grrt.srt",
+      "address": "rtewtwetew",
+      "pass": "123"
+    }
+  ]
+}

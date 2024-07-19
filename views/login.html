@@ -1,0 +1,24 @@
+<div class="container mt-1">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <center><img style="height: 100px;" src="../img/logo_nen-trang.png" alt=""></center>
+            <h2 class="h4 text-center" style="font-weight: bolder;">YOUR ACCOUNT FOR EVERYTHING NIKE</h2>
+            <form ng-submit="onClickSubmit()">
+                <input name="account_user" class="form-control border-black rounded-0" style="height: 45px;"
+                    type="text" placeholder="User" ng-model="info.id"><br>
+                <input name="account_pass" class="form-control border-black rounded-0" style="height: 45px;"
+                    type="password" placeholder="Password" ng-model="info.pass">
+                <div class="d-flex justify-content-between text-decoration-none mt-3 mb-3">
+                    <a style="text-decoration: none; color: black; font-size: 14px;" href="">Forgotten your
+                        password?</a>
+                    <a style="text-decoration: none; color: black; font-size: 14px;"
+                        href="#!register">Register</a>
+                </div>
+                <p class="text-center" style="font-size: 14px;">By logging in, you agree to Privacy Policy <br>
+                    and Terms of Use.</p>
+                <button type="submit" class="btn btn-dark border-black rounded-0 form-control mb-5"
+                    style="height: 45px;">Login</button>
+            </form>
+        </div>
+    </div>
+</div>

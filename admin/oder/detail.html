@@ -1,0 +1,51 @@
+<div class="container-fluid mt-3 mb-5">
+    <h3 class="text-center">ODER INFORMATION</h3>
+    <div class="border pt-4 border-1 border-black rounded" style="flex: 1;">
+        <div class="container mt-3">
+           
+
+            <form action="" method="post">
+                <div class="mt-3">
+                    <span class="form-label">ID:</span>
+                    <input class="form-control" type="text" ng-model="oderDetail.id" disabled>
+                </div>
+                <div class="mt-3">
+                    <span class="form-label">Shopper's name:</span>
+                    <input class="form-control" type="text" ng-model="oderDetail.tenKhach" disabled>
+                </div>
+                <div class="mt-3">
+                    <span class="form-label">Payment methods:</span>
+                    <input class="form-control" type="text" ng-model="oderDetail.pttt" disabled>
+                </div>
+                <div class="mt-3">
+                    <span class="form-label">Status:</span>
+                    <select class="form-control" ng-model="oderDetail.trangThai" disabled>
+                        <option value="">- Sellect -</option>
+                        <option value="Delivered">Delivered</option>
+                        <option value="Delivereing">Delivereing</option>
+                        <option value="Cancel">Cancel</option>
+                    </select>
+                </div>
+                <div class="mt-3">
+                    <span class="form-label">Products:</span>
+                    <div ng-repeat="item in oderDetail.products track by $index">
+                        <ul>
+                            <li>{{item.product_id}} || Số lượng: {{item.quantity}}</li>
+                        </ul>
+                    </div>
+                   
+                </div>
+                <div class="mt-3">
+                    <span class="form-label">Address:</span>
+                    <input class="form-control" type="text" ng-model="oderDetail.diaChi" disabled>
+                </div>
+                <!-- <h3 class="h5 mt-4 fw-bold">Total amount you have to pay: 3.200.000 VNĐ</h3> -->
+
+                <div class="text-center mt-3 mb-3">
+                    <a href="#!oder/list" class="btn btn-success w-25" style="height: 40px;">Return</a>
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,152 @@
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+</head>
+
+<div class="row justify-content-center mb-5 mt-3">
+    <div class="col-6">
+        <div class="border border-2 rounded p-4 border-end-0">
+            <h1 style="text-align: center; font-size: 24px;"> <strong>SHIPMENT DETAILS</strong></h1><br>
+            <form ng-submit="onClickSubmit()">
+                <label for="name">First and last name:</label>
+                <input class="form-control mb-0" type="text" name="receive_name" id="name"
+                    placeholder="First and last name" required ng-model="checkOut.tenKhach">
+                <label for="sdt">Tel:</label>
+                <input class="form-control mb-0" type="tel" name="receive_sdt" id="sdt" placeholder="Tel"
+                    required pattern="\d{10}">
+                <label for="email">Email:</label>
+                <input class="form-control mb-0" type="email" name="receive_email" id="email" placeholder="Email"
+                    required>
+
+                <label for="address">Address:</label>
+                <div>
+                    <select name="receive_address_tinh" class="form-select" id="city" aria-label=".form-select-sm"
+                        required>
+                        <option value="" selected>Select province</option>
+                    </select> <br>
+
+                    <select name="receive_address_huyen" class="form-select" id="district"
+                        aria-label=".form-select-sm" required>
+                        <option value="" selected>Select district</option>
+                    </select><br>
+
+                    <select name="receive_address_xa" class="form-select" id="ward" aria-label=".form-select-sm"
+                        required>
+                        <option value="" selected>Select ward and commune</option>
+                    </select><br>
+                    <input class="form-control" name="receive_address_thon" type="text" id="sonha"
+                        placeholder="Enter your house number, street name/number" required> <br>
+                </div>
+                <h2 class="h6 fw-bold">Shipping information: FREE</h2>
+                <h2 class="h6 fw-bold">Payment methods</h2>
+                <input type="radio" name="order_pttt" id="cod" value="Payment on delivery" required>
+                <label for="cod">Payment on delivery</label>
+                <input type="radio" name="order_pttt" id="prepaid" value="Payment in advance" required>
+                <label for="prepaid">Payment in advance</label><br>
+                <div class="d-flex align-items-start">
+                    <input class="mt-2" type="checkbox" name="agreement" id="agreement" required>
+                    <label for="agreement">I have read, understood and accepted the Privacy Policy and Terms and Condition
+                    </label><br>
+                </div>
+                <button type="submit" class="btn btn-dark w-100 rounded-pill mt-3" style="height: 45px;">Checkout</button>
+
+            </form>
+        </div>
+    </div>
+    <div class="col-4 border border-2 rounded p-4 border-end-0">
+        <div class="" style="margin-left: 5%;">
+            <div>
+                <h1 class="fw-bold mt-1 mb-4 h4">YOUR CART</h1>
+            </div>
+            <div ng-repeat="item in cart.products track by $index">
+                <div class="d-flex">
+                    <img class="me-4" style="height: 180px;" src="../img/Air Force 1.webp" alt="">
+                    <div>
+                        <h2 class="fw-bold mb-2 h5">{{item.product_name}}</h2>
+                        <h6 class="text-danger fw-medium">{{item.product_price}} VNĐ</h6>
+                        <h6 class="mb-3" style="font-size: 14px;">Size: {{item.size}}</h6>
+                        <h6 class="mb-3" style="font-size: 14px;">Color: {{item.color}}</h6>
+                        <h6 class="mb-3" style="font-size: 14px;">Quantity: {{item.quantity}}</h6>
+    
+                    </div>
+    
+    
+                </div>
+                <h3 class="h5 mt-4 fw-bold">
+                    Total money: {{item.quantity*item.product_price}} VNĐ</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var citis = document.getElementById("city");
+    var districts = document.getElementById("district");
+    var wards = document.getElementById("ward");
+    var Parameter = {
+        url: "https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json",
+        method: "GET",
+        responseType: "application/json",
+    };
+    var promise = axios(Parameter);
+    promise.then(function (result) {
+        renderCity(result.data);
+    });
+
+    function renderCity(data) {
+        for (const x of data) {
+            citis.options[citis.options.length] = new Option(x.Name, x.Id);
+        }
+        citis.onchange = function () {
+            district.length = 1;
+            ward.length = 1;
+            if (this.value != "") {
+                const result = data.filter(n => n.Id === this.value);
+
+                for (const k of result[0].Districts) {
+                    district.options[district.options.length] = new Option(k.Name, k.Id);
+                }
+            }
+        };
+        district.onchange = function () {
+            ward.length = 1;
+            const dataCity = data.filter((n) => n.Id === citis.value);
+            if (this.value != "") {
+                const dataWards = dataCity[0].Districts.filter(n => n.Id === this.value)[0].Wards;
+
+                for (const w of dataWards) {
+                    wards.options[wards.options.length] = new Option(w.Name, w.Id);
+                }
+            }
+        };
+    }
+    function validateForm() {
+        var phoneNumber = document.getElementById("sdt").value;
+        var paymentMethod = document.querySelector('input[name="order_pttt"]:checked');
+        var agreement = document.getElementById("agreement");
+        var city = document.getElementById("city");
+        var district = document.getElementById("district");
+        var ward = document.getElementById("ward");
+        var address = document.getElementById("sonha").value;
+
+        if (!/^\d{10}$/.test(phoneNumber)) {
+            alert("Vui lòng nhập một số điện thoại hợp lệ.");
+            return false;
+        }
+
+        if (!paymentMethod) {
+            alert("Vui lòng chọn một phương thức thanh toán.");
+            return false;
+        }
+
+        if (!agreement.checked) {
+            alert("Vui lòng chấp thuận các điều khoản và điều kiện.");
+            return false;
+        }
+
+        if (city.value === "" || district.value === "" || ward.value === "" || address.trim() === "") {
+            alert("Vui lòng nhập đầy đủ thông tin địa chỉ.");
+            return false;
+        }
+
+        return true;
+    }
+</script>

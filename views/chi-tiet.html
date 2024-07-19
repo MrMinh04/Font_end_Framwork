@@ -1,0 +1,89 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div class="mb-1">
+            <img style="height: 349.99px; width: 349.99px;" class="object-fit-cover" src="../img/{{product.anh}}"
+                alt="">
+            <img style="height: 349.99px; width: 349.99px;" class="object-fit-cover" src="../img/{{product.anh2}}"
+                alt="">
+        </div>
+        <div class="mb-4">
+            <img style="height: 349.99px; width: 349.99px;" class="object-fit-cover" src="../img/{{product.anh3}}"
+                alt="">
+            <img style="height: 349.99px; width: 349.99px;" class="object-fit-cover" src="../img/{{product.anh4}}"
+                alt="">
+        </div>
+    </div>
+    <div class="col">
+        
+        <h2 class="fw-bold">{{product.ten}}</h2>
+        <h3 class="text-danger h6 fw-bold">{{product.gia}} VNĐ</h3>
+        <p class="text-muted" style="font-style: italic; font-size: 15px;">{{product.moTa}}</p>
+        <form>
+            
+            <div class="d-none">
+                {{cart.id = userId}}
+            </div>
+            <input type="hidden" ng-model="cart.id">
+            <div ng-repeat="pro in cart.products">
+                <div class="d-none">
+                    {{pro.product_id = product.id}}
+                    {{pro.anh = product.anh}}
+                    {{pro.product_price = product.gia}}
+                    {{pro.product_name = product.ten}}
+                </div>
+                <input type="hidden" ng-model="pro.product_name">
+                <input type="hidden" ng-model="pro.product_price">
+                <input type="hidden" ng-model="pro.product_id">
+                <input type="hidden" ng-model="pro.anh">
+                <div class="mb-3">
+                    <h3 class="h5">Color</h3>
+                    <select class="form-control" ng-model="pro.color">
+                        <option value="">- Sellect -</option>
+                        <option value="White">White</option>
+                        <option value="Black">Black</option>
+                    </select>
+                    
+                </div>
+                <div class="mb-3">
+                    <h3 class="h5">Size</h3>
+                    <div class="d-flex">
+                        <div ng-repeat="item in size track by $index" class="me-4">
+                            <input type="radio" name="size" value="{{item.value}}" ng-model="pro.size"> {{item.value}} 
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="mb-3">
+                    <h3 class="h5">Choose quantity: </h3>
+                    <input style="height: 30px; width: 60px;" class="form-control" type="number" ng-model="pro.quantity">
+                </div>
+            </div>
+        </form>
+        <div class="mt-4">
+            <button class="btn btn-dark w-100 rounded-pill" style="height: 65px;" ng-click="onClickSubmit()">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+        </div>
+    </div>
+</div>
+<h1 class="fw-bold mt-3 d-flex align-items-center" style="height: 70px;">NEW PRODUCT</h1>
+<div class="row">
+    <div class="col-3 mb-5" ng-repeat="item in listProduct track by $index">
+        <div ng-if="item.tenDanhMuc === 'Men\'s product'">
+            <div class="border-black border-top border-bottom overflow-hidden mt-3 mb-3" style="height: 380px;">
+                <div style="height: 70px;">
+                    <h1 style="margin: 0px;" class="h5 d-flex align-items-start mb-2 mt-2">{{item.ten}}</h1>
+                    <div style="height: 30px; font-size: 14px;" class="text-uppercase text-end text-danger-emphasis">
+                        {{item.gia}} VNĐ</div>
+                </div>
+                <div class="bg-light d-flex align-items-center justify-content-center overflow-hidden mt-0">
+                    <img style="height:261px; width: 261px;" class="object-fit-cover" ng-src="../img/{{item.anh}}"
+                        alt="">
+                </div>
+            </div>
+            <div class="text-end">
+                <a class="w-100" href="#!chi-tiet">
+                    <button class="btn btn-dark w-50 btn-sm rounded-0 " style="height: 30px;">FIND OUT MORE</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
